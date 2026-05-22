@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model WorkSession {
+  id               Int      @id @default(autoincrement())
+
+  startTime        DateTime
+  endTime          DateTime
+
+  hourlyRate       Float
+
+  normalHours      Float
+  nightHours       Float
+  sundayHours      Float
+  holidayHours     Float
+  extraDayHours    Float
+  extraNightHours  Float
+
+  totalPayment     Float
+
+  createdAt        DateTime @default(now())
+}

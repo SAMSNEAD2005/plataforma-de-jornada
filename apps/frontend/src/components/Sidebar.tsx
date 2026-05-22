@@ -1,0 +1,85 @@
+export default function Sidebar() {
+  return (
+    <aside
+      className="
+      sticky
+      top-0
+      h-screen
+      w-72
+      border-r
+      border-white/10
+      bg-white/5
+      backdrop-blur-xl
+      p-8
+    "
+    >
+      <div>
+        <h1
+          className="
+          text-4xl
+          font-black
+          tracking-tight
+          bg-gradient-to-r
+          from-cyan-400
+          to-blue-500
+          text-transparent
+          bg-clip-text
+        "
+        >
+          PayrollOS
+        </h1>
+
+        <p
+          className="
+          text-gray-400
+          mt-2
+        "
+        >
+          Enterprise payroll suite
+        </p>
+      </div>
+
+      <nav
+        className="
+        mt-14
+        space-y-3
+      "
+      >
+        <div
+          className="
+          bg-gradient-to-r
+          from-cyan-500/20
+          to-blue-500/20
+          border
+          border-cyan-400/20
+          rounded-2xl
+          px-5
+          py-4
+          text-cyan-300
+          font-medium
+        "
+        >
+          Dashboard
+        </div>
+
+        {["Analytics", "Work Sessions", "Payroll", "Reports"].map((item) => (
+          <div
+            key={item}
+            className="
+              rounded-2xl
+              px-5
+              py-4
+              text-gray-400
+              hover:bg-white/5
+              hover:text-white
+              transition
+              cursor-pointer
+            "
+          >
+            {item}
+          </div>
+        ))}
+      </nav>
+    </aside>
+  );
+}
